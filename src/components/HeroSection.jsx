@@ -133,30 +133,6 @@ export default function HeroSection() {
                 Start your day with wholesome <strong className="text-white">Nutrition Shakes</strong> & refreshing <strong className="text-emerald-400">Afresh</strong>, building better habits and lifelong family vitality.
               </motion.p>
 
-              {/* Dual Primary CTA Action Buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.3 }}
-                className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto"
-              >
-                <Link
-                  to="/wellness"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-brand-500 hover:bg-brand-600 text-white font-semibold text-base px-8 py-4 rounded-full shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 transition-all duration-300 transform hover:-translate-y-0.5"
-                >
-                  <span>Explore Shakes & Diet</span>
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-
-                <Link
-                  to="/events"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold text-base px-8 py-4 rounded-full backdrop-blur-md transition-all duration-300"
-                >
-                  <Calendar className="w-5 h-5 text-brand-400" />
-                  <span>Club Sessions</span>
-                </Link>
-              </motion.div>
-
               {/* Trust Badges Strip */}
               <motion.div
                 initial={{ opacity: 0 }}
