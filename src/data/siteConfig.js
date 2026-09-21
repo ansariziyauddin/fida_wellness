@@ -33,13 +33,13 @@ export const siteConfig = {
   },
 
   navLinks: [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Wellness", path: "/wellness" },
-    { name: "Events", path: "/events" },
-    { name: "Gallery", path: "/gallery" },
-    { name: "Stories", path: "/stories" },
-    { name: "Contact", path: "/contact" },
+    { name: "Home", path: "#hero" },
+    { name: "What We Do", path: "#what-we-do" },
+    { name: "Coach Profile", path: "#coach" },
+    { name: "Lifestyle & Events", path: "#lifestyle" },
+    { name: "Gallery", path: "#gallery" },
+    { name: "FAQ", path: "#faq" },
+    { name: "Contact Us", path: "#contact" },
   ],
 
   stats: [

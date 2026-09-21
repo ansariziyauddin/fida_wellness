@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Calendar, Sparkles, HeartHandshake, ShieldCheck, Users, ChevronLeft, ChevronRight, MessageCircle, Award, Quote } from 'lucide-react';
+import { ArrowRight, Sparkles, HeartHandshake, ShieldCheck, Users, ChevronLeft, ChevronRight, MessageCircle, Award, Quote } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { siteConfig } from '../data/siteConfig';
 
@@ -19,8 +18,23 @@ export default function HeroSection() {
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % totalSlides);
   const prevSlide = () => setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1));
 
+  const scrollToSection = (e, targetId) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-dark-950 text-white pt-24 pb-16 select-none">
+    <section id="hero" className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-dark-950 text-white pt-24 pb-16 select-none">
       
       {/* Slide Navigation Arrows */}
       <button
@@ -43,7 +57,7 @@ export default function HeroSection() {
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3">
         <button
           onClick={() => setCurrentSlide(0)}
-          className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 cursor-pointer ${
+          className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 cursor-pointer ${
             currentSlide === 0
               ? 'bg-brand-500 text-white shadow-md'
               : 'bg-white/15 text-neutral-300 hover:bg-white/25'
@@ -55,7 +69,7 @@ export default function HeroSection() {
 
         <button
           onClick={() => setCurrentSlide(1)}
-          className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 cursor-pointer ${
+          className={`flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 cursor-pointer ${
             currentSlide === 1
               ? 'bg-brand-500 text-white shadow-md'
               : 'bg-white/15 text-neutral-300 hover:bg-white/25'
@@ -128,17 +142,42 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
-                className="mt-6 text-lg sm:text-xl md:text-2xl text-neutral-300 font-normal max-w-3xl mx-auto leading-relaxed"
+                className="mt-6 text-base sm:text-xl md:text-2xl text-neutral-300 font-normal max-w-3xl mx-auto leading-relaxed"
               >
                 Start your day with wholesome <strong className="text-white">Nutrition Shakes</strong> & refreshing <strong className="text-emerald-400">Afresh</strong>, building better habits and lifelong family vitality.
               </motion.p>
+
+              {/* Single Page CTAs */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.3 }}
+                className="mt-8 flex flex-wrap items-center justify-center gap-4"
+              >
+                <a
+                  href="#what-we-do"
+                  onClick={(e) => scrollToSection(e, 'what-we-do')}
+                  className="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-bold text-sm sm:text-base px-8 py-4 rounded-full shadow-lg shadow-brand-500/30 transition-all transform hover:-translate-y-0.5 cursor-pointer"
+                >
+                  <span>Explore What We Do</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+
+                <a
+                  href="#contact"
+                  onClick={(e) => scrollToSection(e, 'contact')}
+                  className="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 text-white border border-white/20 font-bold text-sm sm:text-base px-7 py-4 rounded-full backdrop-blur-md transition-all cursor-pointer"
+                >
+                  <span>Visit Club / Contact</span>
+                </a>
+              </motion.div>
 
               {/* Trust Badges Strip */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.45 }}
-                className="mt-14 pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left"
+                className="mt-12 pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left"
               >
                 <div className="flex items-center gap-3 p-2">
                   <div className="p-2 rounded-xl bg-brand-500/15 border border-brand-500/30 text-brand-400">
@@ -210,7 +249,7 @@ export default function HeroSection() {
               <div className="absolute inset-0 bg-radial-glow opacity-60" />
             </div>
 
-            {/* Open Full-Width Content Container (No Boxed Black Card) */}
+            {/* Open Full-Width Content Container */}
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
                 
@@ -280,13 +319,14 @@ export default function HeroSection() {
                       <span>Consult with Coach</span>
                     </a>
 
-                    <Link
-                      to="/about"
-                      className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold text-sm px-6 py-3.5 rounded-full backdrop-blur-md transition-all"
+                    <a
+                      href="#coach"
+                      onClick={(e) => scrollToSection(e, 'coach')}
+                      className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold text-sm px-6 py-3.5 rounded-full backdrop-blur-md transition-all cursor-pointer"
                     >
-                      <span>Read Full Story</span>
+                      <span>View Coach Profile</span>
                       <ArrowRight className="w-4 h-4" />
-                    </Link>
+                    </a>
                   </div>
 
                 </div>

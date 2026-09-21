@@ -1,11 +1,25 @@
 import React from 'react';
 import { lifestyleSteps } from '../data/lifestyle';
 import { Sparkles, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 export default function RamizaLifestyle() {
+  const scrollToSection = (e, targetId) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <section className="py-20 sm:py-28 bg-neutral-900 text-white relative overflow-hidden">
+    <section id="lifestyle" className="py-20 sm:py-28 bg-neutral-900 text-white relative overflow-hidden">
       {/* Ambient background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-500/10 rounded-full blur-[140px] pointer-events-none" />
 
@@ -61,7 +75,7 @@ export default function RamizaLifestyle() {
                 </div>
 
                 <div className="pt-3 border-t border-neutral-750 flex items-center justify-between text-xs text-neutral-400 group-hover:text-brand-400 transition-colors">
-                  <span className="font-medium">Discover Step</span>
+                  <span className="font-medium">Explore Step</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
@@ -71,13 +85,14 @@ export default function RamizaLifestyle() {
 
         {/* Action Link */}
         <div className="mt-14 text-center">
-          <Link
-            to="/wellness"
-            className="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-semibold text-sm px-7 py-3.5 rounded-full shadow-md transition-all duration-200"
+          <a
+            href="#what-we-do"
+            onClick={(e) => scrollToSection(e, 'what-we-do')}
+            className="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-semibold text-sm px-8 py-3.5 rounded-full shadow-md transition-all duration-200 cursor-pointer"
           >
-            <span>Learn How to Start Your Journey</span>
+            <span>Start Your Healthy Lifestyle Today</span>
             <ArrowRight className="w-4 h-4" />
-          </Link>
+          </a>
         </div>
       </div>
     </section>

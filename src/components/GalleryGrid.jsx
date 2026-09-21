@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { galleryItems, galleryCategories } from '../data/gallery';
-import { Sparkles, X, ZoomIn, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Sparkles, X, ZoomIn, MessageCircle } from 'lucide-react';
+import { siteConfig } from '../data/siteConfig';
 
-export default function GalleryGrid({ limit }) {
+export default function GalleryGrid() {
   const [activeCategory, setActiveCategory] = useState("ALL");
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -12,27 +12,28 @@ export default function GalleryGrid({ limit }) {
     return item.category === activeCategory;
   });
 
-  const displayItems = limit ? filteredItems.slice(0, limit) : filteredItems;
-
   return (
-    <section className="py-20 sm:py-28 bg-neutral-900 text-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="gallery" className="py-20 sm:py-28 bg-neutral-900 text-white relative">
+      {/* Subtle background ambiance */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/20 text-brand-300 text-xs font-semibold uppercase tracking-wider mb-4 border border-brand-500/30">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Visual Memories</span>
+            <span>Visual Memories & Life at Club</span>
           </div>
           <h2 className="font-display font-black text-3xl sm:text-5xl tracking-tight uppercase">
-            LIFE AT <span className="text-brand-400">RAMIZA.</span>
+            PHOTO <span className="text-brand-400">GALLERY.</span>
           </h2>
           <p className="mt-4 text-neutral-400 text-base sm:text-lg">
-            A glimpse into the daily energy, morning sessions, family bonding, and community gatherings that define our movement.
+            A vibrant look into our daily morning nutrition sessions, joyful family gatherings, healthy meal demos, and community spirit.
           </p>
         </div>
 
-        {/* Category Pills */}
+        {/* Category Filter Pills */}
         <div className="flex items-center justify-start sm:justify-center gap-2 pb-4 sm:pb-0 overflow-x-auto no-scrollbar mb-12">
           {galleryCategories.map((cat) => (
             <button
@@ -40,7 +41,7 @@ export default function GalleryGrid({ limit }) {
               onClick={() => setActiveCategory(cat)}
               className={`px-4 py-2 rounded-full text-xs sm:text-sm font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer ${
                 activeCategory === cat
-                  ? 'bg-brand-500 text-white shadow-md'
+                  ? 'bg-brand-500 text-white shadow-md scale-105'
                   : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700 hover:text-white'
               }`}
             >
@@ -51,7 +52,7 @@ export default function GalleryGrid({ limit }) {
 
         {/* Masonry-Style Image Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {displayItems.map((item) => (
+          {filteredItems.map((item) => (
             <div
               key={item.id}
               onClick={() => setSelectedImage(item)}
@@ -61,6 +62,7 @@ export default function GalleryGrid({ limit }) {
                 src={item.image}
                 alt={item.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark-950/90 via-dark-950/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -84,18 +86,24 @@ export default function GalleryGrid({ limit }) {
           ))}
         </div>
 
-        {/* View All CTA if limited */}
-        {limit && (
-          <div className="mt-14 text-center">
-            <Link
-              to="/gallery"
-              className="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-semibold text-sm px-8 py-3.5 rounded-full shadow-md transition-all duration-200"
-            >
-              <span>Explore Full Photo Gallery</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        )}
+        {/* Bottom invitation card */}
+        <div className="mt-14 p-6 sm:p-8 rounded-3xl bg-neutral-800/80 border border-neutral-700/60 max-w-2xl mx-auto text-center">
+          <h4 className="font-display font-bold text-lg sm:text-xl text-white mb-2">
+            Want to be part of our next community album?
+          </h4>
+          <p className="text-xs sm:text-sm text-neutral-400 mb-6">
+            Join our morning wellness club in Jamalpur, Ahmedabad and experience the vibrant community for yourself!
+          </p>
+          <a
+            href={siteConfig.whatsapp.getLink("Hi Coach! I saw your club gallery and would love to attend a session.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-bold text-sm px-6 py-3 rounded-full shadow-lg shadow-brand-500/20 transition-all"
+          >
+            <MessageCircle className="w-4 h-4" />
+            <span>Connect & Attend a Session</span>
+          </a>
+        </div>
 
       </div>
 
@@ -111,7 +119,7 @@ export default function GalleryGrid({ limit }) {
           >
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 z-10 p-2.5 rounded-full bg-black/60 hover:bg-black/80 text-white transition-colors"
+              className="absolute top-4 right-4 z-10 p-2.5 rounded-full bg-black/70 hover:bg-black text-white transition-colors cursor-pointer"
               aria-label="Close image modal"
             >
               <X className="w-5 h-5" />
@@ -138,7 +146,7 @@ export default function GalleryGrid({ limit }) {
 
               <button
                 onClick={() => setSelectedImage(null)}
-                className="px-5 py-2.5 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white text-xs font-semibold"
+                className="px-5 py-2.5 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white text-xs font-semibold cursor-pointer"
               >
                 Close View
               </button>

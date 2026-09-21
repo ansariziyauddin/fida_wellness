@@ -1,9 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Heart, Sparkles, Users, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Heart, Users, ArrowRight } from 'lucide-react';
 import { siteConfig } from '../data/siteConfig';
 
 export default function FamilyDayHighlight() {
+  const scrollToSection = (e, targetId) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <section className="py-20 sm:py-28 bg-gradient-to-b from-brand-950 via-dark-900 to-dark-950 text-white relative overflow-hidden">
       {/* Visual background ambient pattern */}
@@ -36,13 +50,14 @@ export default function FamilyDayHighlight() {
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Link
-                to="/events"
-                className="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-semibold text-sm px-7 py-3.5 rounded-full shadow-lg shadow-brand-500/20 transition-all duration-200"
+              <a
+                href="#gallery"
+                onClick={(e) => scrollToSection(e, 'gallery')}
+                className="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-semibold text-sm px-7 py-3.5 rounded-full shadow-lg shadow-brand-500/20 transition-all duration-200 cursor-pointer"
               >
-                <span>Explore Family Days</span>
+                <span>View Family Day Gallery</span>
                 <ArrowRight className="w-4 h-4" />
-              </Link>
+              </a>
 
               <a
                 href={siteConfig.whatsapp.getLink("Hi! I'd like to bring my family to the next Ramiza Wellness Family Day.")}

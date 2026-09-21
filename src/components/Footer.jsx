@@ -1,9 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Clock, MessageCircle, Heart, ArrowUpRight } from 'lucide-react';
 import { siteConfig } from '../data/siteConfig';
 
 export default function Footer() {
+  const handleNavClick = (e, path) => {
+    e.preventDefault();
+    const targetId = path.replace('#', '');
+    const element = document.getElementById(targetId);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <footer className="bg-dark-900 text-neutral-300 pt-16 pb-12 border-t border-neutral-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -61,13 +76,14 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm">
               {siteConfig.navLinks.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    className="hover:text-brand-400 transition-colors flex items-center gap-1.5 group"
+                  <a
+                    href={link.path}
+                    onClick={(e) => handleNavClick(e, link.path)}
+                    className="hover:text-brand-400 transition-colors flex items-center gap-1.5 group cursor-pointer"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-brand-500 opacity-60 group-hover:scale-125 transition-transform" />
                     <span>{link.name}</span>
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

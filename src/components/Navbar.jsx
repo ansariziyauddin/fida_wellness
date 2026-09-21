@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, MessageCircle, Sparkles } from 'lucide-react';
 import { siteConfig } from '../data/siteConfig';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const location = useLocation();
+  const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,29 +14,64 @@ export default function Navbar() {
       } else {
         setIsScrolled(false);
       }
+
+      // Determine active section for scroll-spy
+      const sections = ['hero', 'what-we-do', 'coach', 'lifestyle', 'gallery', 'faq', 'contact'];
+      const scrollPosition = window.scrollY + 120;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const sectionId = sections[i];
+        const el = document.getElementById(sectionId);
+        if (el) {
+          const top = el.offsetTop;
+          if (scrollPosition >= top) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
+  const handleNavClick = (e, path) => {
+    e.preventDefault();
+    const targetId = path.replace('#', '');
+    const element = document.getElementById(targetId);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+      setActiveSection(targetId);
+    }
     setMobileMenuOpen(false);
-  }, [location.pathname]);
+  };
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-neutral-100 py-3.5'
-          : 'bg-gradient-to-b from-dark-950/80 via-dark-950/40 to-transparent py-5'
+          : 'bg-gradient-to-b from-dark-950/80 via-dark-950/40 to-transparent py-4 sm:py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-6 lg:gap-10">
+        <div className="flex items-center justify-between gap-4 lg:gap-8">
           
           {/* Logo & Brand Name */}
-          <Link to="/" className="flex items-center gap-3 group shrink-0">
+          <a
+            href="#hero"
+            onClick={(e) => handleNavClick(e, '#hero')}
+            className="flex items-center gap-3 group shrink-0"
+          >
             <div className="relative">
               <img
                 src="/assets/logo.jpeg"
@@ -65,17 +99,19 @@ export default function Navbar() {
                 Mission Healthy & Happy Life
               </span>
             </div>
-          </Link>
+          </a>
 
-          {/* Clean Single-Word Desktop Navigation Links */}
+          {/* Clean Single-Page Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
             {siteConfig.navLinks.map((item) => {
-              const isActive = location.pathname === item.path;
+              const targetSection = item.path.replace('#', '');
+              const isActive = activeSection === targetSection;
               return (
-                <Link
+                <a
                   key={item.name}
-                  to={item.path}
-                  className={`px-4 py-2 rounded-full text-sm font-semibold tracking-wide transition-all duration-200 whitespace-nowrap ${
+                  href={item.path}
+                  onClick={(e) => handleNavClick(e, item.path)}
+                  className={`px-3.5 py-1.5 xl:px-4 xl:py-2 rounded-full text-xs xl:text-sm font-semibold tracking-wide transition-all duration-200 whitespace-nowrap ${
                     isActive
                       ? 'bg-brand-500 text-white shadow-sm'
                       : isScrolled
@@ -84,13 +120,13 @@ export default function Navbar() {
                   }`}
                 >
                   {item.name}
-                </Link>
+                </a>
               );
             })}
           </nav>
 
           {/* Action CTAs (Desktop) */}
-          <div className="hidden lg:flex items-center gap-4 shrink-0">
+          <div className="hidden lg:flex items-center gap-3 shrink-0">
             <a
               href={`tel:${siteConfig.contact.phone}`}
               className={`p-2.5 rounded-full transition-colors ${
@@ -107,7 +143,7 @@ export default function Navbar() {
               href={siteConfig.whatsapp.getLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white text-sm font-bold px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white text-xs xl:text-sm font-bold px-4 xl:px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 whitespace-nowrap"
             >
               <MessageCircle className="w-4 h-4" />
               <span>Join Club</span>
@@ -143,11 +179,13 @@ export default function Navbar() {
         <div className="lg:hidden bg-white border-b border-neutral-200 shadow-xl px-4 pt-3 pb-6 animate-fadeIn">
           <nav className="flex flex-col space-y-1 mb-5">
             {siteConfig.navLinks.map((item) => {
-              const isActive = location.pathname === item.path;
+              const targetSection = item.path.replace('#', '');
+              const isActive = activeSection === targetSection;
               return (
-                <Link
+                <a
                   key={item.name}
-                  to={item.path}
+                  href={item.path}
+                  onClick={(e) => handleNavClick(e, item.path)}
                   className={`px-4 py-3 rounded-xl text-base font-semibold flex items-center justify-between ${
                     isActive
                       ? 'bg-brand-500 text-white'
@@ -156,7 +194,7 @@ export default function Navbar() {
                 >
                   <span>{item.name}</span>
                   {isActive && <Sparkles className="w-4 h-4 text-brand-100" />}
-                </Link>
+                </a>
               );
             })}
           </nav>
