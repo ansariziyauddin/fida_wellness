@@ -1,51 +1,30 @@
 import React from 'react';
 import HeroSection from '../components/HeroSection';
-import WhatWeDoSection from '../components/WhatWeDoSection';
-import FounderSpotlight from '../components/FounderSpotlight';
-import RamizaLifestyle from '../components/RamizaLifestyle';
-import FamilyDayHighlight from '../components/FamilyDayHighlight';
-import CommunityStats from '../components/CommunityStats';
-import StoriesCarousel from '../components/StoriesCarousel';
+import AboutUsSection from '../components/AboutUsSection';
 import GalleryGrid from '../components/GalleryGrid';
-import MagicalCommunityBanner from '../components/MagicalCommunityBanner';
-import FAQSection from '../components/FAQSection';
+import RamizaLifestyle from '../components/RamizaLifestyle';
 import ContactSection from '../components/ContactSection';
 
 export default function HomePage() {
   return (
     <div className="flex flex-col">
-      {/* 1. Hero Section (#hero) */}
+      {/* 1. Hero Banner (#hero) */}
       <HeroSection />
 
-      {/* 2. What We Do? Section (#what-we-do) */}
-      <WhatWeDoSection />
+      {/* 2. About Us Section (#about) */}
+      <AboutUsSection />
 
-      {/* 3. Coach Profile Section (#coach) */}
-      <FounderSpotlight />
-
-      {/* 4. Lifestyle Framework (#lifestyle) */}
-      <RamizaLifestyle />
-
-      {/* 5. Family Day Highlight */}
-      <FamilyDayHighlight />
-
-      {/* 6. Community Statistics */}
-      <CommunityStats />
-
-      {/* 7. Member Stories & Testimonials */}
-      <StoriesCarousel />
-
-      {/* 8. Visual Gallery Showcase (#gallery) */}
+      {/* 3. Visual Gallery Showcase (#gallery) */}
       <GalleryGrid />
 
-      {/* 9. Parent Movement: Magical Community Showcase */}
-      <MagicalCommunityBanner />
+      {/* 4. Lifestyle Framework: Healthy is a Way of Life (#lifestyle) */}
+      <RamizaLifestyle />
 
-      {/* 10. Frequently Asked Questions (#faq) */}
-      <FAQSection />
-
-      {/* 11. Contact Us & Club Visit Section (#contact) */}
+      {/* 5. Get In Touch / Contact Us (#contact) */}
       <ContactSection />
     </div>
   );
 }
+
+
+

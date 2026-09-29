@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { galleryItems, galleryCategories } from '../data/gallery';
-import { Sparkles, X, ZoomIn, MessageCircle } from 'lucide-react';
-import { siteConfig } from '../data/siteConfig';
+import { Sparkles, X, ZoomIn } from 'lucide-react';
 
 export default function GalleryGrid() {
   const [activeCategory, setActiveCategory] = useState("ALL");
@@ -84,25 +83,6 @@ export default function GalleryGrid() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Bottom invitation card */}
-        <div className="mt-14 p-6 sm:p-8 rounded-3xl bg-neutral-800/80 border border-neutral-700/60 max-w-2xl mx-auto text-center">
-          <h4 className="font-display font-bold text-lg sm:text-xl text-white mb-2">
-            Want to be part of our next community album?
-          </h4>
-          <p className="text-xs sm:text-sm text-neutral-400 mb-6">
-            Join our morning wellness club in Jamalpur, Ahmedabad and experience the vibrant community for yourself!
-          </p>
-          <a
-            href={siteConfig.whatsapp.getLink("Hi Coach! I saw your club gallery and would love to attend a session.")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-bold text-sm px-6 py-3 rounded-full shadow-lg shadow-brand-500/20 transition-all"
-          >
-            <MessageCircle className="w-4 h-4" />
-            <span>Connect & Attend a Session</span>
-          </a>
         </div>
 
       </div>

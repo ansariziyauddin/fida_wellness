@@ -1,11 +1,9 @@
 import React from 'react';
 import { siteConfig } from '../data/siteConfig';
-import MagicalCommunityBanner from '../components/MagicalCommunityBanner';
 import FounderSpotlight from '../components/FounderSpotlight';
 import CommunityStats from '../components/CommunityStats';
 import FinalCTA from '../components/FinalCTA';
-import { Sparkles, Heart, Users, Target, ShieldCheck, Sun, CheckCircle2, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Sparkles, Heart, Users, ShieldCheck, Sun, CheckCircle2 } from 'lucide-react';
 
 export default function AboutPage() {
   return (
@@ -54,7 +52,7 @@ export default function AboutPage() {
               </p>
 
               <p className="mt-4 text-neutral-600 leading-relaxed text-base">
-                **Ramiza Wellness Zone** was founded to provide a welcoming, high-energy community sanctuary where healthy habits become second nature. Through interactive morning sessions, nutrition coaching, group walks, and monthly Family Days, we prove that health is most enjoyable when shared with loved ones.
+                <strong>Ramiza Wellness Zone</strong> was founded to provide a welcoming, high-energy community sanctuary where healthy habits become second nature. Through interactive morning sessions, nutrition coaching, group walks, and monthly Family Days, we prove that health is most enjoyable when shared with loved ones.
               </p>
 
               <div className="mt-8 space-y-3">
@@ -147,11 +145,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* Guiding Values */}
-
-      {/* Parent Movement: Magical Community */}
-      <MagicalCommunityBanner />
 
       {/* Founder Spotlight */}
       <FounderSpotlight />

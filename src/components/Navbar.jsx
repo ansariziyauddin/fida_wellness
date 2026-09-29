@@ -16,7 +16,7 @@ export default function Navbar() {
       }
 
       // Determine active section for scroll-spy
-      const sections = ['hero', 'what-we-do', 'coach', 'lifestyle', 'gallery', 'faq', 'contact'];
+      const sections = ['hero', 'about', 'gallery', 'lifestyle', 'contact'];
       const scrollPosition = window.scrollY + 120;
 
       for (let i = sections.length - 1; i >= 0; i--) {

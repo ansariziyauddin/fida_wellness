@@ -34,11 +34,9 @@ export const siteConfig = {
 
   navLinks: [
     { name: "Home", path: "#hero" },
-    { name: "What We Do", path: "#what-we-do" },
-    { name: "Coach Profile", path: "#coach" },
-    { name: "Lifestyle & Events", path: "#lifestyle" },
+    { name: "About Us", path: "#about" },
     { name: "Gallery", path: "#gallery" },
-    { name: "FAQ", path: "#faq" },
+    { name: "Lifestyle", path: "#lifestyle" },
     { name: "Contact Us", path: "#contact" },
   ],
 
@@ -55,28 +53,5 @@ export const siteConfig = {
     quote: "Wellness is not a temporary routine—it is a daily celebration of life, good nutrition, and positive community energy.",
     experience: "Years of dedicated community guidance in healthy active lifestyle & personalized habit coaching.",
     image: "/assets/coach-hero.jpeg"
-  },
-
-  parentCommunity: {
-    name: "Magical Community",
-    mission: "Mission Healthy & Happy Life",
-    tagline: "Helping 10,000 Families To Live Their Best Life",
-    hashtag: "#teamfishtornado",
-    logo: "/assets/magical-community.png",
-    description: "Ramiza Wellness Zone operates under the visionary umbrella of Magical Community (#teamfishtornado)—a dynamic, family-centric movement on a mission to empower 10,000 families to live healthier, happier, and more vibrant lives through sustainable habits and peer support.",
-    pillars: [
-      {
-        title: "10,000 Families Vision",
-        desc: "A dedicated national mission to touch and elevate ten thousand households with holistic wellness."
-      },
-      {
-        title: "#teamfishtornado Energy",
-        desc: "Unstoppable community enthusiasm, mutual upliftment, and inspiring transformation momentum."
-      },
-      {
-        title: "Holistic Health Mentorship",
-        desc: "Certified wellness guidance covering balanced nutrition, daily active movement, and habit mastery."
-      }
-    ]
   }
 };

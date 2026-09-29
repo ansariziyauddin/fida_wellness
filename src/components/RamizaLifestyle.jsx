@@ -86,8 +86,8 @@ export default function RamizaLifestyle() {
         {/* Action Link */}
         <div className="mt-14 text-center">
           <a
-            href="#what-we-do"
-            onClick={(e) => scrollToSection(e, 'what-we-do')}
+            href="#contact"
+            onClick={(e) => scrollToSection(e, 'contact')}
             className="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-semibold text-sm px-8 py-3.5 rounded-full shadow-md transition-all duration-200 cursor-pointer"
           >
             <span>Start Your Healthy Lifestyle Today</span>

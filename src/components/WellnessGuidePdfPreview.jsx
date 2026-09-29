@@ -331,7 +331,7 @@ export default function WellnessGuidePdfPreview({ isOpen, onClose }) {
                       Ramiza Wellness Zone
                     </h1>
                     <p className="text-xs text-brand-600 font-bold uppercase tracking-wider">
-                      Magical Community (#teamfishtornado)
+                      Mission Healthy & Happy Life
                     </p>
                   </div>
                 </div>
@@ -346,10 +346,10 @@ export default function WellnessGuidePdfPreview({ isOpen, onClose }) {
               {/* Page Title */}
               <div className="mb-6 bg-brand-50/70 p-4 rounded-xl border border-brand-100">
                 <h2 className="font-display font-black text-lg text-dark-900 uppercase">
-                  3. Family Days, Movement & Parent Vision
+                  3. Family Days & Community Health Vision
                 </h2>
                 <p className="text-xs text-neutral-600 mt-1">
-                  We are part of the nationwide <strong>Magical Community (#teamfishtornado)</strong> movement on a mission to touch 10,000 families with holistic health.
+                  Dedicated to empowering families across Ahmedabad with holistic nutrition, active habits, and lifelong vitality.
                 </p>
               </div>
 
