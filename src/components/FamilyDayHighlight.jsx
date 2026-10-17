@@ -46,7 +46,7 @@ export default function FamilyDayHighlight() {
             </p>
 
             <p className="mt-4 text-neutral-400 text-sm leading-relaxed">
-              At Ramiza Wellness Zone, health is never a solo pursuit. Our signature Family Days bring children, parents, and grandparents together with joyful fitness games, fun nutrition demos, and lasting memories.
+              At Fida Wellness Zone, health is never a solo pursuit. Our signature Family Days bring children, parents, and grandparents together with joyful fitness games, fun nutrition demos, and lasting memories.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -60,7 +60,7 @@ export default function FamilyDayHighlight() {
               </a>
 
               <a
-                href={siteConfig.whatsapp.getLink("Hi! I'd like to bring my family to the next Ramiza Wellness Family Day.")}
+                href={siteConfig.whatsapp.getLink("Hi! I'd like to bring my family to the next Fida Wellness Family Day.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-semibold text-sm px-6 py-3.5 rounded-full backdrop-blur-md transition-all duration-200"

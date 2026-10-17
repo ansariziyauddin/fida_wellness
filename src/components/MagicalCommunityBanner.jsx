@@ -42,7 +42,7 @@ export default function MagicalCommunityBanner() {
               </h3>
 
               <p className="mt-2 text-neutral-300 text-xs sm:text-sm leading-relaxed max-w-2xl">
-                Ramiza Wellness Zone proudly operates under <strong className="text-white">Magical Community</strong> (<span className="text-emerald-400 font-semibold">{parentCommunity.hashtag}</span>)—a nationwide movement empowering households with sustainable diet habits and daily routine guidance.
+                Fida Wellness Zone proudly operates under <strong className="text-white">Magical Community</strong> (<span className="text-emerald-400 font-semibold">{parentCommunity.hashtag}</span>)—a nationwide movement empowering households with sustainable diet habits and daily routine guidance.
               </p>
 
               {/* Action */}

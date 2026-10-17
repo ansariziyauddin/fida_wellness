@@ -17,7 +17,7 @@ export default function WellnessGuidePdfPreview({ isOpen, onClose }) {
   };
 
   const handleShare = () => {
-    const text = `Check out the Ramiza Wellness Zone Guide & Daily Schedule!\n${window.location.href}`;
+    const text = `Check out the Fida Wellness Zone Guide & Daily Schedule!\n${window.location.href}`;
     window.open(siteConfig.whatsapp.getLink(text), '_blank');
   };
 
@@ -38,7 +38,7 @@ export default function WellnessGuidePdfPreview({ isOpen, onClose }) {
             </div>
             <div>
               <h3 className="font-display font-bold text-xs sm:text-sm text-white flex items-center gap-1.5">
-                <span>Ramiza_Wellness_Guide_2026.pdf</span>
+                <span>Fida_Wellness_Guide_2026.pdf</span>
                 <span className="px-2 py-0.5 rounded text-[10px] bg-brand-500 text-white font-semibold">PDF PREVIEW</span>
               </h3>
               <p className="text-[10px] sm:text-xs text-neutral-400">Official Club Schedule & Nutrition Guide</p>
@@ -115,7 +115,7 @@ export default function WellnessGuidePdfPreview({ isOpen, onClose }) {
                   />
                   <div>
                     <h1 className="font-display font-black text-xl text-dark-900 uppercase tracking-tight">
-                      Ramiza Wellness Zone
+                      Fida Wellness Zone
                     </h1>
                     <p className="text-xs text-brand-600 font-bold uppercase tracking-wider">
                       Mission Healthy & Happy Life
@@ -126,7 +126,7 @@ export default function WellnessGuidePdfPreview({ isOpen, onClose }) {
                   <span className="text-[10px] font-bold uppercase bg-brand-50 text-brand-700 border border-brand-200 px-2.5 py-1 rounded-md">
                     Official Club Guide
                   </span>
-                  <p className="text-[10px] text-neutral-500 mt-1">Doc Ref: RWZ-2026-V1</p>
+                  <p className="text-[10px] text-neutral-500 mt-1">Doc Ref: FWZ-2026-V1</p>
                 </div>
               </div>
 
@@ -136,7 +136,7 @@ export default function WellnessGuidePdfPreview({ isOpen, onClose }) {
                   1. Welcome & Daily Club Timings
                 </h2>
                 <p className="text-xs text-neutral-600 mt-1">
-                  Ramiza Wellness Zone is a community committed to uplifting health, nutrition, and lifestyle habits for individuals and whole families across Ahmedabad.
+                  Fida Wellness Zone is a community committed to uplifting health, nutrition, and lifestyle habits for individuals and whole families across Ahmedabad.
                 </p>
               </div>
 
@@ -199,7 +199,7 @@ export default function WellnessGuidePdfPreview({ isOpen, onClose }) {
 
               {/* Page Footer */}
               <div className="flex items-center justify-between pt-4 border-t border-neutral-200 text-[10px] text-neutral-400">
-                <span>Ramiza Wellness Zone • Jamalpur, Ahmedabad</span>
+                <span>Fida Wellness Zone • Danilimda, Ahmedabad</span>
                 <span>Page 1 of 3</span>
               </div>
             </div>
@@ -218,7 +218,7 @@ export default function WellnessGuidePdfPreview({ isOpen, onClose }) {
                   />
                   <div>
                     <h1 className="font-display font-black text-xl text-dark-900 uppercase tracking-tight">
-                      Ramiza Wellness Zone
+                      Fida Wellness Zone
                     </h1>
                     <p className="text-xs text-brand-600 font-bold uppercase tracking-wider">
                       80% Nutrition + 20% Active Lifestyle
@@ -229,7 +229,7 @@ export default function WellnessGuidePdfPreview({ isOpen, onClose }) {
                   <span className="text-[10px] font-bold uppercase bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-1 rounded-md">
                     Nutrition Protocol
                   </span>
-                  <p className="text-[10px] text-neutral-500 mt-1">Doc Ref: RWZ-2026-V1</p>
+                  <p className="text-[10px] text-neutral-500 mt-1">Doc Ref: FWZ-2026-V1</p>
                 </div>
               </div>
 
@@ -309,7 +309,7 @@ export default function WellnessGuidePdfPreview({ isOpen, onClose }) {
 
               {/* Page Footer */}
               <div className="flex items-center justify-between pt-4 border-t border-neutral-200 text-[10px] text-neutral-400">
-                <span>Ramiza Wellness Zone • Pure Nutrition & Energy</span>
+                <span>Fida Wellness Zone • Pure Nutrition & Energy</span>
                 <span>Page 2 of 3</span>
               </div>
             </div>
@@ -328,7 +328,7 @@ export default function WellnessGuidePdfPreview({ isOpen, onClose }) {
                   />
                   <div>
                     <h1 className="font-display font-black text-xl text-dark-900 uppercase tracking-tight">
-                      Ramiza Wellness Zone
+                      Fida Wellness Zone
                     </h1>
                     <p className="text-xs text-brand-600 font-bold uppercase tracking-wider">
                       Mission Healthy & Happy Life
@@ -339,7 +339,7 @@ export default function WellnessGuidePdfPreview({ isOpen, onClose }) {
                   <span className="text-[10px] font-bold uppercase bg-amber-50 text-amber-700 border border-amber-200 px-2.5 py-1 rounded-md">
                     Family & Community
                   </span>
-                  <p className="text-[10px] text-neutral-500 mt-1">Doc Ref: RWZ-2026-V1</p>
+                  <p className="text-[10px] text-neutral-500 mt-1">Doc Ref: FWZ-2026-V1</p>
                 </div>
               </div>
 
@@ -365,7 +365,7 @@ export default function WellnessGuidePdfPreview({ isOpen, onClose }) {
                   “{siteConfig.founder.quote}”
                 </p>
                 <p className="text-[11px] text-brand-700 font-bold mt-2">
-                  — Founder & Lead Coach, Ramiza Wellness Zone
+                  — {siteConfig.founder.name}, {siteConfig.founder.title}, {siteConfig.name}
                 </p>
               </div>
 
@@ -380,7 +380,7 @@ export default function WellnessGuidePdfPreview({ isOpen, onClose }) {
                 </div>
                 <div className="p-2.5 rounded-lg bg-neutral-50 border border-neutral-200 text-xs flex items-center gap-3">
                   <span className="w-5 h-5 rounded-full bg-brand-500 text-white font-bold flex items-center justify-center text-[10px] shrink-0">2</span>
-                  <span>Visit Haji Building, Opp. Khamosh Footwear, Jamalpur, Ahmedabad</span>
+                  <span>Visit {siteConfig.contact.address.full}</span>
                 </div>
                 <div className="p-2.5 rounded-lg bg-neutral-50 border border-neutral-200 text-xs flex items-center gap-3">
                   <span className="w-5 h-5 rounded-full bg-brand-500 text-white font-bold flex items-center justify-center text-[10px] shrink-0">3</span>
@@ -394,13 +394,13 @@ export default function WellnessGuidePdfPreview({ isOpen, onClose }) {
                   Ready to transform your lifestyle?
                 </p>
                 <p className="text-[11px] text-brand-100">
-                  Join our morning club tomorrow at 6:30 AM in Jamalpur, Ahmedabad!
+                  Visit our wellness zone Monday to Sunday, 7:00 AM – 7:00 PM in Danilimda, Ahmedabad!
                 </p>
               </div>
 
               {/* Page Footer */}
               <div className="flex items-center justify-between pt-4 mt-6 border-t border-neutral-200 text-[10px] text-neutral-400">
-                <span>Ramiza Wellness Zone • #teamfishtornado</span>
+                <span>Fida Wellness Zone</span>
                 <span>Page 3 of 3</span>
               </div>
             </div>

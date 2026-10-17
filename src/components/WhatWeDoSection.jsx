@@ -74,8 +74,8 @@ const habitGoals = [
     id: "routine",
     label: "Morning Routine & Discipline",
     icon: Clock,
-    recommendation: "6:30 AM Club Session + Community Fellowship",
-    desc: "Transform your mornings into an inspiring habit sanctuary surrounded by like-minded health enthusiasts in Jamalpur."
+    recommendation: "7:00 AM Club Session + Community Fellowship",
+    desc: "Transform your mornings into an inspiring habit sanctuary surrounded by like-minded health enthusiasts in Danilimda."
   }
 ];
 
@@ -100,7 +100,7 @@ export default function WhatWeDoSection() {
             <span>Our Offerings & Daily Programs</span>
           </div>
           <h2 className="font-display font-black text-3xl sm:text-5xl text-dark-900 tracking-tight uppercase leading-tight">
-            WHAT WE DO AT <span className="text-brand-600">RAMIZA WELLNESS</span>
+            WHAT WE DO AT <span className="text-brand-600">FIDA WELLNESS</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-neutral-600 leading-relaxed">
             We offer a comprehensive, community-driven wellness experience combining pure nutrition, daily sessions, movement, and habit coaching in Ahmedabad.
@@ -172,7 +172,7 @@ export default function WhatWeDoSection() {
               FIND YOUR PERFECT <span className="text-brand-400">WELLNESS PATH</span>
             </h3>
             <p className="mt-3 text-xs sm:text-sm text-neutral-300 max-w-xl mx-auto">
-              Select your primary health goal below to discover how Ramiza Wellness Zone personalizes your journey.
+              Select your primary health goal below to discover how Fida Wellness Zone personalizes your journey.
             </p>
           </div>
 
@@ -216,7 +216,7 @@ export default function WhatWeDoSection() {
 
             <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
               <a
-                href={siteConfig.whatsapp.getLink(`Hello Ramiza Wellness Zone! I'm interested in the ${currentGoal.label} program.`)}
+                href={siteConfig.whatsapp.getLink(`Hello Fida Wellness Zone! I'm interested in the ${currentGoal.label} program.`)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-bold text-xs sm:text-sm px-6 py-3.5 rounded-full shadow-lg shadow-brand-500/30 transition-all shrink-0 whitespace-nowrap"

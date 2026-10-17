@@ -10,9 +10,9 @@ const goals = [
 ];
 
 const timeSlots = [
-  { id: "morning", label: "Morning Club Sessions (6:30 AM - 10:30 AM)" },
-  { id: "evening", label: "Evening Coaching & Discussion (5:30 PM - 8:30 PM)" },
-  { id: "weekend", label: "Weekend / Sunday Family Days" },
+  { id: "morning", label: "Morning Club Sessions (7:00 AM - 1:00 PM)" },
+  { id: "evening", label: "Afternoon & Evening Sessions (3:00 PM - 7:00 PM)" },
+  { id: "weekend", label: "Full Day Access (Mon - Sun, 7:00 AM - 7:00 PM)" },
 ];
 
 export default function WellnessHabitFinder() {
@@ -47,7 +47,7 @@ export default function WellnessHabitFinder() {
               FIND YOUR <span className="text-brand-600">IDEAL WELLNESS TRACK</span>
             </h2>
             <p className="mt-2 text-xs sm:text-sm text-neutral-600">
-              Select your primary goal and preferred timing to see which Ramiza Wellness program suits you best.
+              Select your primary goal and preferred timing to see which Fida Wellness program suits you best.
             </p>
           </div>
 

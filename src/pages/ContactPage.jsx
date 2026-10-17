@@ -13,7 +13,7 @@ export default function ContactPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const text = `Hello Ramiza Wellness Zone!\n\nName: ${formData.name}\nPhone: ${formData.phone}\nInterested In: ${formData.interest}\nNote: ${formData.message || 'I would like to visit the club.'}`;
+    const text = `Hello Fida Wellness Zone!\n\nName: ${formData.name}\nPhone: ${formData.phone}\nInterested In: ${formData.interest}\nNote: ${formData.message || 'I would like to visit the club.'}`;
     window.open(siteConfig.whatsapp.getLink(text), '_blank');
     setSubmitted(true);
   };
@@ -40,7 +40,7 @@ export default function ContactPage() {
             VISIT OR <span className="text-brand-400">CONTACT US</span>
           </h1>
           <p className="mt-4 text-lg sm:text-xl text-neutral-300 max-w-2xl mx-auto">
-            Drop by our Jamalpur club in Ahmedabad or message us directly on WhatsApp to attend your first session.
+            Drop by our Danilimda club in Ahmedabad or message us directly on WhatsApp to attend your first session.
           </p>
         </div>
       </section>
@@ -134,13 +134,13 @@ export default function ContactPage() {
                 <div>
                   <h4 className="font-display font-bold text-dark-900 text-base">Club Hours</h4>
                   <p className="text-xs text-neutral-600 mt-1">
-                    Morning Sessions: <strong>{siteConfig.contact.timings.morningClub}</strong> (Mon–Sat)
+                    Open Hours: <strong>{siteConfig.contact.timings.fullDay}</strong> (Monday to Sunday)
                   </p>
                   <p className="text-xs text-neutral-600 mt-0.5">
-                    Evening Coaching: <strong>{siteConfig.contact.timings.eveningSession}</strong>
+                    Morning Nutrition Sessions: <strong>{siteConfig.contact.timings.morningClub}</strong>
                   </p>
                   <p className="text-xs text-neutral-600 mt-0.5">
-                    Sunday Family Days: <strong>{siteConfig.contact.timings.sundayFamilyDay}</strong>
+                    Evening Consultations: <strong>{siteConfig.contact.timings.eveningSession}</strong>
                   </p>
                 </div>
               </div>
@@ -216,8 +216,8 @@ export default function ContactPage() {
                       onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
                       className="w-full px-4 py-3.5 rounded-xl bg-neutral-50 border border-neutral-200 focus:border-brand-500 focus:bg-white focus:outline-none text-sm transition-all"
                     >
-                      <option value="Morning Wellness Session">Morning Wellness Session (6:30 AM - 10:30 AM)</option>
-                      <option value="Family Day Gathering">Family Day Gathering (Sundays)</option>
+                      <option value="Morning Wellness Session">Morning Wellness Session (7:00 AM - 1:00 PM)</option>
+                      <option value="Daily Club Visit">Daily Club Visit (Mon - Sun, 7:00 AM - 7:00 PM)</option>
                       <option value="Nutrition & Healthy Eating Guidance">Nutrition & Healthy Eating Guidance</option>
                       <option value="Outdoor Riverfront Walks & Events">Outdoor Riverfront Walks & Events</option>
                       <option value="General Club Tour / Consultation">General Club Tour / Consultation</option>

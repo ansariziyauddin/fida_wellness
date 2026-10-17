@@ -111,7 +111,7 @@ export default function EventsSection({ limit }) {
                 </Link>
 
                 <a
-                  href={siteConfig.whatsapp.getLink(`Hi Ramiza Wellness Zone! I'd like to RSVP / register for: "${event.title}" on ${event.date}.`)}
+                  href={siteConfig.whatsapp.getLink(`Hi Fida Wellness Zone! I'd like to RSVP / register for: "${event.title}" on ${event.date}.`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 bg-brand-500/10 hover:bg-brand-500 text-brand-700 hover:text-white px-3.5 py-2 rounded-xl text-xs font-semibold transition-all duration-200"

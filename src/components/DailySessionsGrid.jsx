@@ -22,7 +22,7 @@ export default function DailySessionsGrid({ limit }) {
               <span className="text-brand-600">HAPPENS EVERY DAY.</span>
             </h2>
             <p className="mt-4 text-neutral-600 text-base sm:text-lg">
-              Ramiza Wellness Zone conducts regular interactive sessions and educational lectures focused on health, balanced eating, daily movement, and uplifting community awareness.
+              Fida Wellness Zone conducts regular interactive sessions and educational lectures focused on health, balanced eating, daily movement, and uplifting community awareness.
             </p>
           </div>
 
@@ -30,9 +30,9 @@ export default function DailySessionsGrid({ limit }) {
             <div className="bg-white p-4 rounded-2xl border border-neutral-200/80 shadow-sm">
               <div className="flex items-center gap-2 text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-1">
                 <Clock className="w-3.5 h-3.5 text-brand-600" />
-                <span>Morning Club Hours</span>
+                <span>Club Hours</span>
               </div>
-              <p className="text-dark-900 font-bold text-sm">6:30 AM – 10:30 AM (Mon–Sat)</p>
+              <p className="text-dark-900 font-bold text-sm">7:00 AM – 7:00 PM (Monday to Sunday)</p>
             </div>
           </div>
         </div>

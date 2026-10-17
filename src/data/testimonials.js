@@ -4,7 +4,7 @@ export const testimonialsData = [
     name: "Arif Khan",
     role: "Family Wellness Member, Ahmedabad",
     duration: "Member for 1 year",
-    quote: "I didn’t just learn about nutrition. I learned to truly enjoy living healthier. Joining Ramiza Wellness Zone transformed our whole family's morning routine!",
+    quote: "I didn’t just learn about nutrition. I learned to truly enjoy living healthier. Joining Fida Wellness Zone transformed our whole family's morning routine!",
     image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80",
     stats: "Gained High Energy & Healthy Habits"
   },
@@ -22,7 +22,7 @@ export const testimonialsData = [
     name: "Zoya & Imran Patel",
     role: "Family Members",
     duration: "Members for 1.5 years",
-    quote: "Family Day is something our children look forward to every single month! Ramiza Wellness Zone showed us that wellness can be fun, social, and deeply rewarding.",
+    quote: "Family Day is something our children look forward to every single month! Fida Wellness Zone showed us that wellness can be fun, social, and deeply rewarding.",
     image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=600&q=80",
     stats: "Full Family Lifestyle Shift"
   },

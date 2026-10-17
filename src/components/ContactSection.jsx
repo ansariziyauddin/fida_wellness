@@ -12,7 +12,7 @@ export default function ContactSection() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const text = `Hello Ramiza Wellness Zone!\n\nName: ${formData.name}\nMobile Number: ${formData.phone}\nMessage: ${formData.message || 'I would like to know more about Ramiza Wellness Zone.'}`;
+    const text = `Hello Fida Wellness Zone!\n\nName: ${formData.name}\nMobile Number: ${formData.phone}\nMessage: ${formData.message || 'I would like to know more about Fida Wellness Zone.'}`;
     window.open(siteConfig.whatsapp.getLink(text), '_blank');
     setSubmitted(true);
   };

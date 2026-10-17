@@ -18,12 +18,12 @@ export default function FinalCTA() {
         </h2>
 
         <p className="mt-3 text-brand-100 text-xs sm:text-base max-w-xl mx-auto leading-relaxed">
-          Join our daily nutrition sessions, morning shake bar, and family health circles in Jamalpur, Ahmedabad.
+          Join our daily nutrition sessions, morning shake bar, and family health circles in Danilimda, Ahmedabad.
         </p>
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3.5">
           <a
-            href={siteConfig.whatsapp.getLink("Hello Ramiza Wellness Zone! I want to join the club and attend a morning session.")}
+            href={siteConfig.whatsapp.getLink("Hello Fida Wellness Zone! I want to join the club and attend a session.")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 bg-dark-900 hover:bg-black text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-full shadow-xl transition-all"
@@ -43,7 +43,7 @@ export default function FinalCTA() {
 
         <div className="mt-6 flex items-center justify-center gap-1.5 text-[11px] text-brand-100/90 font-medium">
           <MapPin className="w-3.5 h-3.5 text-white shrink-0" />
-          <span>{siteConfig.contact.address.line1}, {siteConfig.contact.address.line2}, Jamalpur, Ahmedabad</span>
+          <span>{siteConfig.contact.address.full}</span>
         </div>
       </div>
     </section>

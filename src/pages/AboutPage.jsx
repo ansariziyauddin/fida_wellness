@@ -13,7 +13,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=2000&q=80"
-            alt="About Ramiza Wellness"
+            alt="About Fida Wellness"
             className="w-full h-full object-cover opacity-25 brightness-50"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/80 to-transparent" />
@@ -25,10 +25,10 @@ export default function AboutPage() {
             <span>Our Origin & Purpose</span>
           </div>
           <h1 className="font-display font-black text-4xl sm:text-6xl text-white tracking-tight uppercase max-w-4xl mx-auto">
-            ABOUT <span className="text-brand-400">RAMIZA WELLNESS ZONE</span>
+            ABOUT <span className="text-brand-400">FIDA WELLNESS ZONE</span>
           </h1>
           <p className="mt-4 text-lg sm:text-xl text-neutral-300 max-w-2xl mx-auto">
-            “Mission Healthy and Happy Life” — Transforming lives through daily habit education, nourishing nutrition, and family wellness in Ahmedabad.
+            “Mission Healthy and Happy Life” — Transforming lives through daily habit education, nourishing nutrition, and family wellness in Danilimda, Ahmedabad.
           </p>
         </div>
       </section>
@@ -52,7 +52,7 @@ export default function AboutPage() {
               </p>
 
               <p className="mt-4 text-neutral-600 leading-relaxed text-base">
-                <strong>Ramiza Wellness Zone</strong> was founded to provide a welcoming, high-energy community sanctuary where healthy habits become second nature. Through interactive morning sessions, nutrition coaching, group walks, and monthly Family Days, we prove that health is most enjoyable when shared with loved ones.
+                <strong>Fida Wellness Zone</strong> was founded to provide a welcoming, high-energy community sanctuary where healthy habits become second nature. Through interactive morning sessions, nutrition coaching, group walks, and monthly Family Days, we prove that health is most enjoyable when shared with loved ones.
               </p>
 
               <div className="mt-8 space-y-3">
@@ -98,7 +98,7 @@ export default function AboutPage() {
               OUR GUIDING <span className="text-brand-600">VALUES</span>
             </h2>
             <p className="mt-3 text-neutral-600 text-sm sm:text-base">
-              The four foundational pillars that define every session and gathering at Ramiza Wellness Zone.
+              The four foundational pillars that define every session and gathering at Fida Wellness Zone.
             </p>
           </div>
 

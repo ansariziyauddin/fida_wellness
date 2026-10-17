@@ -137,7 +137,7 @@ export default function EventDetailPage() {
             {/* Actions / RSVP */}
             <div className="mt-10 pt-8 border-t border-neutral-100 flex flex-col sm:flex-row items-center justify-between gap-4">
               <a
-                href={siteConfig.whatsapp.getLink(`Hi Ramiza Wellness! I would like to RSVP for "${event.title}" on ${event.date}.`)}
+                href={siteConfig.whatsapp.getLink(`Hi Fida Wellness! I would like to RSVP for "${event.title}" on ${event.date}.`)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm px-8 py-4 rounded-full shadow-lg shadow-emerald-500/20 transition-all"

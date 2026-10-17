@@ -49,7 +49,7 @@ export default function FounderSpotlight() {
             </h2>
 
             <p className="mt-2 text-brand-700 font-semibold text-base sm:text-lg">
-              Ramiza Wellness Zone • Jamalpur, Ahmedabad
+              {siteConfig.founder.name} • {siteConfig.name} • Danilimda, Ahmedabad
             </p>
 
             {/* Quote Block */}

@@ -20,12 +20,12 @@ export default function Footer() {
               <div className="flex items-center gap-4 mb-4">
                 <img
                   src="/assets/logo.jpeg"
-                  alt="Ramiza Wellness Zone"
+                  alt="Fida Wellness Zone"
                   className="w-16 h-16 rounded-2xl object-cover ring-2 ring-brand-500/60 shadow-lg shrink-0"
                 />
                 <div>
                   <h3 className="font-display font-black text-2xl text-white tracking-tight">
-                    Ramiza <span className="text-brand-400">Wellness</span>
+                    Fida <span className="text-brand-400">Wellness</span>
                   </h3>
                   <p className="text-xs text-brand-300 font-semibold tracking-wider uppercase mt-0.5">
                     Mission Healthy & Happy Life
@@ -65,23 +65,23 @@ export default function Footer() {
 
               <div className="space-y-3 text-xs sm:text-sm">
                 <div className="bg-neutral-800/60 p-3.5 rounded-2xl border border-neutral-700/50">
-                  <span className="text-neutral-400 text-xs block mb-1">Morning Sessions (Mon–Sat)</span>
+                  <span className="text-neutral-400 text-xs block mb-1">Open All Days (Mon–Sun)</span>
                   <p className="text-white font-bold text-sm sm:text-base text-brand-300">
+                    {siteConfig.contact.timings.fullDay}
+                  </p>
+                </div>
+
+                <div className="bg-neutral-800/60 p-3.5 rounded-2xl border border-neutral-700/50">
+                  <span className="text-neutral-400 text-xs block mb-1">Morning Nutrition & Shake Bar</span>
+                  <p className="text-white font-bold text-sm sm:text-base text-emerald-300">
                     {siteConfig.contact.timings.morningClub}
                   </p>
                 </div>
 
                 <div className="bg-neutral-800/60 p-3.5 rounded-2xl border border-neutral-700/50">
-                  <span className="text-neutral-400 text-xs block mb-1">Evening Coaching</span>
-                  <p className="text-white font-bold text-sm sm:text-base text-emerald-300">
-                    {siteConfig.contact.timings.eveningSession}
-                  </p>
-                </div>
-
-                <div className="bg-neutral-800/60 p-3.5 rounded-2xl border border-neutral-700/50">
-                  <span className="text-neutral-400 text-xs block mb-1">Sunday Family Days</span>
+                  <span className="text-neutral-400 text-xs block mb-1">Afternoon & Evening Consultations</span>
                   <p className="text-white font-bold text-sm sm:text-base text-teal-300">
-                    {siteConfig.contact.timings.sundayFamilyDay}
+                    {siteConfig.contact.timings.eveningSession}
                   </p>
                 </div>
               </div>
@@ -154,7 +154,7 @@ export default function Footer() {
 
         {/* Bottom Sub-bar */}
         <div className="pt-8 border-t border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
-          <p>© {new Date().getFullYear()} Ramiza Wellness Zone. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Fida Wellness Zone. All rights reserved.</p>
           <div className="flex items-center gap-1.5 text-neutral-300">
             <span>Live Healthy. Live Together.</span>
             <Heart className="w-3.5 h-3.5 text-brand-500 fill-brand-500" />

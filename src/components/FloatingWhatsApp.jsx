@@ -28,7 +28,7 @@ export default function FloatingWhatsApp() {
         target="_blank"
         rel="noopener noreferrer"
         className="group relative flex items-center justify-center w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-110"
-        aria-label="Chat with Ramiza Wellness Zone on WhatsApp"
+        aria-label="Chat with Fida Wellness Zone on WhatsApp"
       >
         <span className="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-30" />
         <MessageCircle className="w-7 h-7 relative z-10" />

@@ -64,7 +64,7 @@ export default function AboutUsSection() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs sm:text-sm font-bold uppercase tracking-wider mb-4"
           >
             <Sparkles className="w-4 h-4 text-brand-500" />
-            <span>ABOUT RAMIZA WELLNESS ZONE</span>
+            <span>ABOUT FIDA WELLNESS ZONE</span>
           </motion.div>
 
           <motion.h2
@@ -85,7 +85,7 @@ export default function AboutUsSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-4 text-base sm:text-lg text-neutral-600 leading-relaxed"
           >
-            Transforming lives through daily nutrition education, morning shake bars, habit coaching, and family togetherness in Jamalpur, Ahmedabad.
+            Transforming lives through daily nutrition education, morning shake bars, habit coaching, and family togetherness in Danilimda, Ahmedabad.
           </motion.p>
         </div>
 
@@ -112,11 +112,11 @@ export default function AboutUsSection() {
               <div className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-5 rounded-2xl border border-white/50 shadow-xl">
                 <div className="flex items-center gap-3.5">
                   <div className="w-12 h-12 rounded-xl bg-brand-500 text-white flex items-center justify-center font-bold text-lg shrink-0 shadow-md">
-                    RWZ
+                    FWZ
                   </div>
                   <div>
                     <h4 className="font-display font-bold text-dark-900 text-base">Ahmedabad Nutrition Center</h4>
-                    <p className="text-xs text-neutral-600">Daily morning habit & diet coaching sessions at Jamalpur</p>
+                    <p className="text-xs text-neutral-600">Daily morning habit & diet coaching sessions at Danilimda</p>
                   </div>
                 </div>
               </div>
@@ -141,7 +141,7 @@ export default function AboutUsSection() {
               Our Origin & Philosophy
             </span>
             <h3 className="font-display font-black text-2xl sm:text-3xl text-dark-900 uppercase leading-snug">
-              WHY RAMIZA WELLNESS ZONE?
+              WHY FIDA WELLNESS ZONE?
             </h3>
 
             <p className="mt-4 text-neutral-600 leading-relaxed text-sm sm:text-base">
@@ -149,7 +149,7 @@ export default function AboutUsSection() {
             </p>
 
             <p className="mt-3 text-neutral-600 leading-relaxed text-sm sm:text-base">
-              <strong className="text-dark-900">Ramiza Wellness Zone</strong> was founded to provide a joyful, non-judgmental community sanctuary where healthy eating and active living become sustainable habits, bringing individuals and families together for lifelong vitality.
+              <strong className="text-dark-900">Fida Wellness Zone</strong> was founded to provide a joyful, non-judgmental community sanctuary where healthy eating and active living become sustainable habits, bringing individuals and families together for lifelong vitality.
             </p>
 
             {/* Bullet Highlights */}
@@ -171,7 +171,7 @@ export default function AboutUsSection() {
             {/* CTAs */}
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a
-                href={siteConfig.whatsapp.getLink("Hello Coach! I'd like to learn more about Ramiza Wellness Zone.")}
+                href={siteConfig.whatsapp.getLink("Hello Coach! I'd like to learn more about Fida Wellness Zone.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-bold text-sm px-6 py-3.5 rounded-full shadow-md hover:shadow-lg transition-all"

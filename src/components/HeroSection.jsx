@@ -1,9 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Sparkles, ShieldCheck, Users, MessageCircle, Award, Quote } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { siteConfig } from '../data/siteConfig';
 
+const heroBackgrounds = [
+  {
+    id: 1,
+    url: "/assets/hero-bg.jpg",
+    title: "Sanctuary",
+    alt: "Fida Wellness Zone Sanctuary & Nutrition Lounge"
+  },
+  {
+    id: 2,
+    url: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=2000&q=80",
+    title: "Nutrition",
+    alt: "Wholesome Clean Nutrition & Fresh Superfoods"
+  },
+  {
+    id: 3,
+    url: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=2000&q=80",
+    title: "Vitality",
+    alt: "Active Community Health & Movement"
+  }
+];
+
 export default function HeroSection() {
+  const [bgIndex, setBgIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setBgIndex((prev) => (prev + 1) % heroBackgrounds.length);
+    }, 7000);
+    return () => clearInterval(timer);
+  }, []);
+
   const scrollToSection = (e, targetId) => {
     e.preventDefault();
     const element = document.getElementById(targetId);
@@ -21,22 +51,50 @@ export default function HeroSection() {
 
   return (
     <section id="hero" className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-dark-950 text-white pt-24 pb-16 select-none">
-      {/* Background Image with Ambient Motion */}
+      {/* Background Images with Ambient Crossfade */}
       <div className="absolute inset-0 z-0">
-        <motion.div
-          initial={{ scale: 1.05 }}
-          animate={{ scale: 1.15 }}
-          transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
-          className="w-full h-full"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=2000&q=80"
-            alt="Wholesome Diet and Nutrition Lifestyle"
-            className="w-full h-full object-cover object-center opacity-40 brightness-90"
-          />
-        </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/80 to-dark-950/40" />
-        <div className="absolute inset-0 bg-radial-glow opacity-60" />
+        {heroBackgrounds.map((bg, idx) => (
+          <div
+            key={bg.id}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              idx === bgIndex ? 'opacity-45' : 'opacity-0'
+            }`}
+          >
+            <motion.div
+              initial={{ scale: 1.05 }}
+              animate={idx === bgIndex ? { scale: 1.12 } : { scale: 1.05 }}
+              transition={{ duration: 10, ease: "easeOut" }}
+              className="w-full h-full"
+            >
+              <img
+                src={bg.url}
+                alt={bg.alt}
+                className="w-full h-full object-cover object-center brightness-95"
+              />
+            </motion.div>
+          </div>
+        ))}
+        
+        {/* Soft Vignette Gradients */}
+        <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/80 to-dark-950/45 pointer-events-none" />
+        <div className="absolute inset-0 bg-radial-glow opacity-60 pointer-events-none" />
+
+        {/* Background Switcher Indicators */}
+        <div className="absolute bottom-6 right-8 z-20 hidden sm:flex items-center gap-2 bg-dark-950/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 shadow-lg">
+          {heroBackgrounds.map((bg, idx) => (
+            <button
+              key={bg.id}
+              onClick={() => setBgIndex(idx)}
+              className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                idx === bgIndex
+                  ? 'w-6 bg-brand-400'
+                  : 'w-2 bg-white/30 hover:bg-white/60'
+              }`}
+              aria-label={`Switch to background ${bg.title}`}
+              title={bg.title}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Content Container */}
@@ -97,7 +155,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mt-2 text-brand-300 font-bold text-sm sm:text-base"
             >
-              Founder & Lead Wellness Coach • Ramiza Wellness Zone
+              {siteConfig.founder.name} • {siteConfig.founder.title} • {siteConfig.name}
             </motion.p>
 
             {/* Quote Box */}
@@ -119,7 +177,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.35 }}
               className="mt-4 text-neutral-300 text-xs sm:text-sm leading-relaxed max-w-2xl"
             >
-              Personalized 1-on-1 diet coaching, morning shake bar guidance, and family habit mentorship at Jamalpur, Ahmedabad.
+              Personalized 1-on-1 diet coaching, morning shake bar guidance, and family habit mentorship at Danilimda, Ahmedabad.
             </motion.p>
 
             {/* CTAs */}
@@ -194,7 +252,7 @@ export default function HeroSection() {
             </div>
             <div>
               <p className="text-xs font-semibold text-white">Daily Community</p>
-              <p className="text-[11px] text-neutral-400">Jamalpur, Ahmedabad</p>
+              <p className="text-[11px] text-neutral-400">Danilimda, Ahmedabad</p>
             </div>
           </div>
 

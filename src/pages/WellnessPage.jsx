@@ -1,5 +1,5 @@
 import DailySessionsGrid from '../components/DailySessionsGrid';
-import RamizaLifestyle from '../components/RamizaLifestyle';
+import FidaLifestyle from '../components/FidaLifestyle';
 import WellnessHabitFinder from '../components/WellnessHabitFinder';
 import FinalCTA from '../components/FinalCTA';
 import { Sparkles, Clock, CheckCircle2, ArrowRight } from 'lucide-react';
@@ -42,9 +42,9 @@ export default function WellnessPage() {
                 <Clock className="w-8 h-8" />
               </div>
               <div>
-                <h3 className="font-display font-bold text-xl">Daily Club Routine (Mon to Sat)</h3>
+                <h3 className="font-display font-bold text-xl">Daily Club Routine (Monday to Sunday)</h3>
                 <p className="text-xs sm:text-sm text-brand-100">
-                  Morning Vitality: {siteConfig.contact.timings.morningClub} • Evening Coaching: {siteConfig.contact.timings.eveningSession}
+                  Open Hours: {siteConfig.contact.timings.fullDay} • Morning Sessions: {siteConfig.contact.timings.morningClub}
                 </p>
               </div>
             </div>
@@ -61,8 +61,8 @@ export default function WellnessPage() {
         </div>
       </section>
 
-      {/* 5-Step Ramiza Lifestyle */}
-      <RamizaLifestyle />
+      {/* 5-Step Fida Lifestyle */}
+      <FidaLifestyle />
 
       {/* Full Daily Sessions Modules */}
       <DailySessionsGrid />

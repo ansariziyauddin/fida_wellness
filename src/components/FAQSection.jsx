@@ -4,20 +4,20 @@ import { siteConfig } from '../data/siteConfig';
 
 const faqs = [
   {
-    question: "What are the session timings at Ramiza Wellness Zone?",
-    answer: `Our Morning Wellness Club operates from 6:30 AM to 10:30 AM (Monday to Saturday). Our Evening Coaching & Follow-ups take place from 5:30 PM to 8:30 PM. On Sundays, we conduct our special Family Day gatherings from 8:00 AM to 12:00 PM.`
+    question: "What are the session timings at Fida Wellness Zone?",
+    answer: `Our Wellness Zone is open Monday to Sunday, from 7:00 AM to 7:00 PM. Morning nutrition club sessions run from 7:00 AM to 1:00 PM, with ongoing 1-on-1 consultations and evening coaching through 7:00 PM.`
   },
   {
     question: "Where is the club located in Ahmedabad?",
-    answer: `We are conveniently located at: Haji Building, Opp. Khamosh Footwear, Near Goliwala Book Store, Jamalpur, Ahmedabad, Gujarat 380001. We are easily accessible from all parts of Old and Central Ahmedabad.`
+    answer: `We are conveniently located at: Bharat Traders, Chhipa Society, Bakery Wali Gali, Danilimda, Ahmedabad, Gujarat 382405. We are easily accessible from across Ahmedabad.`
   },
   {
     question: "What happens on my very first visit to the club?",
-    answer: `On your first visit, our Lead Wellness Coach will welcome you with a complimentary body composition assessment (BMI, muscle mass, body fat percentage, hydration level). You will also experience our refreshing Afresh tea, taste our nutrient-dense shake, and learn about our community habit circle.`
+    answer: `On your first visit, Lead Wellness Coach Shakir Hussain will welcome you with a complimentary body composition assessment (BMI, muscle mass, body fat percentage, hydration level). You will also experience our refreshing Afresh tea, taste our nutrient-dense shake, and learn about our community habit circle.`
   },
   {
     question: "Is this a gym or a nutrition community?",
-    answer: `Ramiza Wellness Zone is primarily a nutrition and healthy lifestyle community. We believe 80% of wellness is nutrition and 20% is active movement. We focus on daily eating discipline, high-nutrition breakfast shakes, energy teas, daily health lectures, and habit coaching rather than heavy weightlifting.`
+    answer: `Fida Wellness Zone is primarily a nutrition and healthy lifestyle community. We believe 80% of wellness is nutrition and 20% is active movement. We focus on daily eating discipline, high-nutrition breakfast shakes, energy teas, daily health lectures, and habit coaching rather than heavy weightlifting.`
   },
   {
     question: "Can I bring my family, spouse, or kids?",
@@ -53,7 +53,7 @@ export default function FAQSection() {
             FREQUENTLY ASKED <span className="text-brand-600">QUESTIONS.</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-neutral-600">
-            Everything you need to know about joining Ramiza Wellness Zone and starting your health journey.
+            Everything you need to know about joining Fida Wellness Zone and starting your health journey.
           </p>
         </div>
 
@@ -103,7 +103,7 @@ export default function FAQSection() {
             </p>
           </div>
           <a
-            href={siteConfig.whatsapp.getLink("Hello Coach! I have a question about Ramiza Wellness Zone.")}
+            href={siteConfig.whatsapp.getLink("Hello Coach! I have a question about Fida Wellness Zone.")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-full shadow-md shrink-0"

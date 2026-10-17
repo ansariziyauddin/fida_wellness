@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, Phone, MessageCircle, Sparkles } from 'lucide-react';
 import { siteConfig } from '../data/siteConfig';
 
@@ -6,29 +6,44 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const isScrolledRef = useRef(false);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
 
-      // Determine active section for scroll-spy
-      const sections = ['hero', 'about', 'gallery', 'lifestyle', 'contact'];
-      const scrollPosition = window.scrollY + 120;
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const sectionId = sections[i];
-        const el = document.getElementById(sectionId);
-        if (el) {
-          const top = el.offsetTop;
-          if (scrollPosition >= top) {
-            setActiveSection(sectionId);
-            break;
+          // Hysteresis threshold to eliminate any boundary flickering
+          if (!isScrolledRef.current && scrollY > 60) {
+            isScrolledRef.current = true;
+            setIsScrolled(true);
+          } else if (isScrolledRef.current && scrollY < 25) {
+            isScrolledRef.current = false;
+            setIsScrolled(false);
           }
-        }
+
+          // Determine active section for scroll-spy only if changed
+          const sections = ['hero', 'about', 'gallery', 'lifestyle', 'contact'];
+          const scrollPosition = scrollY + 120;
+
+          for (let i = sections.length - 1; i >= 0; i--) {
+            const sectionId = sections[i];
+            const el = document.getElementById(sectionId);
+            if (el) {
+              const top = el.offsetTop;
+              if (scrollPosition >= top) {
+                setActiveSection((prev) => (prev !== sectionId ? sectionId : prev));
+                break;
+              }
+            }
+          }
+
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
@@ -56,14 +71,22 @@ export default function Navbar() {
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-neutral-100 py-3.5'
-          : 'bg-gradient-to-b from-dark-950/80 via-dark-950/40 to-transparent py-4 sm:py-5'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="fixed top-0 left-0 right-0 z-50 py-3.5 select-none">
+      {/* Background Layer 1: Scrolled White Glass with Subtle Border & Shadow */}
+      <div
+        className={`absolute inset-0 bg-white/95 backdrop-blur-md shadow-xs border-b border-neutral-200/80 transition-opacity duration-300 pointer-events-none ${
+          isScrolled ? 'opacity-100' : 'opacity-0'
+        }`}
+      />
+
+      {/* Background Layer 2: Top Ambient Dark Gradient Glass */}
+      <div
+        className={`absolute inset-0 bg-gradient-to-b from-dark-950/90 via-dark-950/50 to-transparent backdrop-blur-sm transition-opacity duration-300 pointer-events-none ${
+          isScrolled ? 'opacity-0' : 'opacity-100'
+        }`}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex items-center justify-between gap-4 lg:gap-8">
           
           {/* Logo & Brand Name */}
@@ -75,7 +98,7 @@ export default function Navbar() {
             <div className="relative">
               <img
                 src="/assets/logo.jpeg"
-                alt="Ramiza Wellness Zone Logo"
+                alt="Fida Wellness Zone Logo"
                 className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover ring-2 ring-brand-500 shadow-sm transition-transform duration-300 group-hover:scale-105"
               />
               <span className="absolute -bottom-0.5 -right-0.5 flex h-3 w-3">
@@ -85,14 +108,14 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col">
               <span
-                className={`font-display font-bold text-lg sm:text-xl tracking-tight leading-none transition-colors ${
+                className={`font-display font-bold text-lg sm:text-xl tracking-tight leading-none transition-colors duration-200 ${
                   isScrolled ? 'text-dark-900' : 'text-white'
                 }`}
               >
-                Ramiza <span className="text-brand-500">Wellness</span>
+                Fida <span className="text-brand-500">Wellness</span>
               </span>
               <span
-                className={`text-[10px] sm:text-[11px] font-medium tracking-wider uppercase mt-1 transition-colors ${
+                className={`text-[10px] sm:text-[11px] font-medium tracking-wider uppercase mt-1 transition-colors duration-200 ${
                   isScrolled ? 'text-neutral-500' : 'text-neutral-300'
                 }`}
               >
@@ -129,7 +152,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3 shrink-0">
             <a
               href={`tel:${siteConfig.contact.phone}`}
-              className={`p-2.5 rounded-full transition-colors ${
+              className={`p-2.5 rounded-full transition-colors duration-200 ${
                 isScrolled
                   ? 'text-neutral-700 hover:text-brand-600 hover:bg-brand-50'
                   : 'text-neutral-200 hover:text-white hover:bg-white/10'
@@ -163,7 +186,7 @@ export default function Navbar() {
             </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`p-2 rounded-lg transition-colors ${
+              className={`p-2 rounded-lg transition-colors duration-200 ${
                 isScrolled ? 'text-neutral-800 hover:bg-neutral-100' : 'text-white hover:bg-white/10'
               }`}
               aria-label="Toggle navigation menu"
@@ -176,7 +199,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-neutral-200 shadow-xl px-4 pt-3 pb-6 animate-fadeIn">
+        <div className="lg:hidden bg-white border-b border-neutral-200 shadow-xl px-4 pt-3 pb-6 animate-fadeIn relative z-20">
           <nav className="flex flex-col space-y-1 mb-5">
             {siteConfig.navLinks.map((item) => {
               const targetSection = item.path.replace('#', '');
