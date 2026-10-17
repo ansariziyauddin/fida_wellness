@@ -4,7 +4,7 @@ import {
   Printer, Share2, Sparkles, CheckCircle2, MapPin, Clock, 
   Phone, Mail, ShieldCheck, Heart, Coffee, Apple, Award
 } from 'lucide-react';
-import { siteConfig } from '../data/siteConfig';
+import { siteConfig, getAssetUrl } from '../data/siteConfig';
 
 export default function WellnessGuidePdfPreview({ isOpen, onClose }) {
   const [currentPage, setCurrentPage] = useState(1);
@@ -109,7 +109,7 @@ export default function WellnessGuidePdfPreview({ isOpen, onClose }) {
               <div className="flex items-center justify-between border-b-2 border-brand-500 pb-5 mb-6">
                 <div className="flex items-center gap-3">
                   <img
-                    src="/assets/logo.jpeg"
+                    src={getAssetUrl('assets/logo.jpeg')}
                     alt="Logo"
                     className="w-12 h-12 rounded-full object-cover ring-2 ring-brand-500"
                   />
@@ -212,7 +212,7 @@ export default function WellnessGuidePdfPreview({ isOpen, onClose }) {
               <div className="flex items-center justify-between border-b-2 border-brand-500 pb-5 mb-6">
                 <div className="flex items-center gap-3">
                   <img
-                    src="/assets/logo.jpeg"
+                    src={getAssetUrl('assets/logo.jpeg')}
                     alt="Logo"
                     className="w-12 h-12 rounded-full object-cover ring-2 ring-brand-500"
                   />
@@ -322,7 +322,7 @@ export default function WellnessGuidePdfPreview({ isOpen, onClose }) {
               <div className="flex items-center justify-between border-b-2 border-brand-500 pb-5 mb-6">
                 <div className="flex items-center gap-3">
                   <img
-                    src="/assets/logo.jpeg"
+                    src={getAssetUrl('assets/logo.jpeg')}
                     alt="Logo"
                     className="w-12 h-12 rounded-full object-cover ring-2 ring-brand-500"
                   />

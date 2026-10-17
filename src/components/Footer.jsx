@@ -1,6 +1,6 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Clock, Heart, ArrowUpRight, MessageCircle } from 'lucide-react';
-import { siteConfig } from '../data/siteConfig';
+import { siteConfig, getAssetUrl } from '../data/siteConfig';
 
 export default function Footer() {
   return (
@@ -19,7 +19,7 @@ export default function Footer() {
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <img
-                  src="/assets/logo.jpeg"
+                  src={getAssetUrl('assets/logo.jpeg')}
                   alt="Fida Wellness Zone"
                   className="w-16 h-16 rounded-2xl object-cover ring-2 ring-brand-500/60 shadow-lg shrink-0"
                 />

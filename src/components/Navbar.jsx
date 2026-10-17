@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, Phone, MessageCircle, Sparkles } from 'lucide-react';
-import { siteConfig } from '../data/siteConfig';
+import { siteConfig, getAssetUrl } from '../data/siteConfig';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -97,7 +97,7 @@ export default function Navbar() {
           >
             <div className="relative">
               <img
-                src="/assets/logo.jpeg"
+                src={getAssetUrl('assets/logo.jpeg')}
                 alt="Fida Wellness Zone Logo"
                 className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover ring-2 ring-brand-500 shadow-sm transition-transform duration-300 group-hover:scale-105"
               />

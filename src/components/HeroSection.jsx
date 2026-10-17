@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Sparkles, ShieldCheck, Users, MessageCircle, Award, Quote } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { siteConfig } from '../data/siteConfig';
+import { siteConfig, getAssetUrl } from '../data/siteConfig';
 
 const heroBackgrounds = [
   {
     id: 1,
-    url: "/assets/hero-bg.jpg",
+    url: getAssetUrl("assets/hero-bg.jpg"),
     title: "Sanctuary",
     alt: "Fida Wellness Zone Sanctuary & Nutrition Lounge"
   },

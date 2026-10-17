@@ -1,3 +1,12 @@
+const BASE = import.meta.env.BASE_URL || '/';
+export const getAssetUrl = (path) => {
+  if (!path) return '';
+  if (path.startsWith('http://') || path.startsWith('https://')) return path;
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  const cleanBase = BASE.endsWith('/') ? BASE : `${BASE}/`;
+  return `${cleanBase}${cleanPath}`;
+};
+
 export const siteConfig = {
   name: "Fida Wellness Zone",
   tagline: "Mission Healthy and Happy Life",
@@ -55,12 +64,12 @@ export const siteConfig = {
     club: "Fida Wellness Zone",
     quote: "Wellness is not a temporary routine—it is a daily celebration of life, good nutrition, and positive community energy.",
     experience: "Years of dedicated community guidance in healthy active lifestyle & personalized habit coaching.",
-    image: "/assets/coach-hero.jpeg"
+    image: getAssetUrl("assets/coach-hero.jpeg")
   },
 
   parentCommunity: {
     name: "Magical Community",
-    logo: "/assets/magical-community.png",
+    logo: getAssetUrl("assets/magical-community.png"),
     tagline: "Empowering Lives Through Positive Habits & Nutrition",
     hashtag: "#MagicalCommunity"
   }
