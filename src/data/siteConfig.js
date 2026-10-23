@@ -64,7 +64,7 @@ export const siteConfig = {
     club: "Fida Wellness Zone",
     quote: "Wellness is not a temporary routine—it is a daily celebration of life, good nutrition, and positive community energy.",
     experience: "Years of dedicated community guidance in healthy active lifestyle & personalized habit coaching.",
-    image: getAssetUrl("assets/coach-hero.jpeg")
+    image: getAssetUrl("assets/coach-placeholder.jpg")
   },
 
   parentCommunity: {

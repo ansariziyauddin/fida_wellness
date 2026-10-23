@@ -1,5 +1,5 @@
 import React from 'react';
-import { siteConfig } from '../data/siteConfig';
+import { siteConfig, getAssetUrl } from '../data/siteConfig';
 import { ShieldCheck, Award, MessageCircle, Heart, Quote, CheckCircle2, Phone, Calendar, Sparkles } from 'lucide-react';
 
 export default function FounderSpotlight() {
@@ -19,6 +19,10 @@ export default function FounderSpotlight() {
                 <img
                   src={siteConfig.founder.image}
                   alt={siteConfig.founder.name}
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = getAssetUrl("assets/coach-placeholder.svg");
+                  }}
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
               </div>

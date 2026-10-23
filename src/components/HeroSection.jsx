@@ -113,6 +113,10 @@ export default function HeroSection() {
                 <img
                   src={siteConfig.founder.image}
                   alt={siteConfig.founder.name}
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = getAssetUrl("assets/coach-placeholder.svg");
+                  }}
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
