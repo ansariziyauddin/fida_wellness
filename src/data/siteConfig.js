@@ -11,6 +11,7 @@ export const siteConfig = {
   name: "Fida Wellness Zone",
   tagline: "Mission Healthy and Happy Life",
   shortDescription: "A vibrant wellness community dedicated to transforming lives through daily health sessions, mindful nutrition, fitness habits, and joyful family events.",
+  logo: getAssetUrl("assets/logo.png"),
   
   contact: {
     phone: "8530140707",

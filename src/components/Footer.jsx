@@ -19,9 +19,9 @@ export default function Footer() {
             <div>
               <div className="flex items-center gap-4 mb-4">
                 <img
-                  src={getAssetUrl('assets/logo.jpeg')}
+                  src={siteConfig.logo || getAssetUrl('assets/logo.png')}
                   alt="Fida Wellness Zone"
-                  className="w-16 h-16 rounded-2xl object-cover ring-2 ring-brand-500/60 shadow-lg shrink-0"
+                  className="w-16 h-16 rounded-full object-cover ring-2 ring-brand-500/60 shadow-lg shrink-0"
                 />
                 <div>
                   <h3 className="font-display font-black text-2xl text-white tracking-tight">
